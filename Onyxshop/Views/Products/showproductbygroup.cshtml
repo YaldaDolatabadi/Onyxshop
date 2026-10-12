@@ -1,0 +1,32 @@
+﻿@model IEnumerable<product>
+@{
+    ViewData["Title"] = ViewBag.tit;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row my-4">
+<h1>محصولات مربوط به گروه @ViewBag.tit </h1>
+</div>
+<partial name="_ProductBox" model="@Model"/>
+
+@*<ul>
+    @foreach(var i in Model)
+    {
+        <li>@i.Name</li>
+             <div class="d-flex col-4" >
+            <div class="card" >
+  <img class="card-img-top" src="/images/@(i.Id).jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">@i.Name</h5>
+    <p class="card-text">@i.description.</p>
+    ارسال به اکشن با پارامتر
+    <a asp-action="details" asp-controller="home" asp-route-id="@i.Id" class="btn btn-warning">جزئیات</a>
+  </div>
+</div>
+        </div>
+       
+    }
+</ul>*@
+@*این کاری که بالا انجام دادم هرچند جواب داد اما کپی کردن کده و کار درستی نیست
+بنابراین تبدیلش میکنم به یه پارشیال ویو*@
+
+

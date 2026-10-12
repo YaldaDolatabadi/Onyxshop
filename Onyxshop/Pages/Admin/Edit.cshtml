@@ -1,0 +1,53 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Onyxshop.Pages.Admin.EditModel
+@{
+     Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<h1>ویرایش محصول</h1>
+<hr />
+<br />
+<div class="container">
+ <form method="post" enctype="multipart/form-data"  class="col-10 rtl" >
+     <input type="hidden" asp-for="producttoedit.Id" />
+                        <dl >
+                            
+                          <dd>  <label asp-for="producttoedit.name">نام محصول</label></dd>
+                            <dt>
+                                <input asp-for="producttoedit.name"  />
+                                <span asp-validation-for="producttoedit.name" class="text-danger"></span>
+                            </dt>
+                            <dd><label asp-for="producttoedit.description">توضیحات</label></dd>
+                            <dt>
+                                <textarea asp-for="producttoedit.description" class="form-control"></textarea>
+                                <span asp-validation-for="producttoedit.description" class="text-danger"></span>
+                            </dt>
+                                 <dd><label asp-for="producttoedit.vazn">وزن</label></dd>
+                            <dt>
+                                <input asp-for="producttoedit.vazn" class="form-control" />
+                                <span asp-validation-for="producttoedit.vazn" class="text-danger"></span>
+                            </dt>
+                            <dd><label asp-for="producttoedit.price">قیمت</label></dd>
+                            <dt>
+                                <input asp-for="producttoedit.price" class="form-control" />
+                                <span asp-validation-for="producttoedit.price"class="text-danger"></span>
+                            </dt>
+                            <dd><label asp-for="producttoedit.quantityinstock">تعداد در واحد</label></dd>
+                            <dt>
+                                <input asp-for="producttoedit.quantityinstock" class="form-control" />
+                                <span asp-validation-for="producttoedit.quantityinstock"class="text-danger"></span>
+                            </dt>
+                            <dd><label asp-for="producttoedit.picture">تصویر</label></dd>
+                            <dt>
+                                <input asp-for="producttoedit.picture" />
+                                <span asp-validation-for="producttoedit.picture"class="text-danger"></span>
+                            </dt>
+                            <dd></dd>
+                            <dt>
+                                <br />
+                                <input type="submit" class="btn btn-success" value="ثبت"  />
+                              @*  onclick="SubmitForms('Addproducttoedit'); return false;"*@
+                            </dt>
+                        </dl>
+                            </form>
+                            </div>

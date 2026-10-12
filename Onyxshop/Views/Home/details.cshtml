@@ -1,0 +1,49 @@
+﻿@model detailsviewmodel
+@{
+    ViewData["Title"] = "محصول"+@Model.product.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@{
+    public string myFunction()
+    {
+        return "hello";
+    }
+}*@
+
+<div> 
+    @*قانون سئو*@
+    <h1 class="display-3">@Model.product.Name</h1>
+    <hr/>
+
+    <div class="d-flex flex-row">
+    @*عکس محصول*@
+    <div class="d-flex col-6" style="height:300px">
+         <img src="~/images/@(Model.product.Id).jpg" alt="@Model.product.Name" class="img-thumbnail"/>
+    </div>
+   
+    @*توضیح و خرید*@
+    <div class="d-flex flex-column col-6">
+    @*<p class="text-justify">@Model.product.description</p>*@
+     <p>@Model.product.description</p>
+
+     <p>@Model.product.SabadItem.price تومان</p>
+
+   <h5>در دسته ی:</h5>
+    <dl>
+        @foreach (var item in Model.categories)
+        {
+            //داخل لینک گذاشتم که روی نام هر گروه زدن محصولات مربوط به اون گروهو نمایش بده
+            <dt><a href="#">@item.Name</a></dt>
+               @*<p>@item.decription</p>*@
+           
+        }
+    </dl>
+    <div>
+        <a class="py-4 btn-primary" asp-controller="home" asp-action="addtosabad"
+        asp-route-itemid="@Model.product.sabaditemid">افزودن به سبد خرید</a>
+    </div>
+    </div>
+    </div>
+
+</div>
+

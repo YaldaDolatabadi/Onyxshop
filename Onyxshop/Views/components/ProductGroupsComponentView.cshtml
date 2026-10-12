@@ -1,0 +1,16 @@
+﻿@*@using Onyxshop.Data.Repositories
+@inject IGroupRepository _GroupRepository
+*@
+@model IEnumerable<Category>
+<h1>همه گروه محصول ها</h1>
+
+<ul>
+    @foreach (var i in Model)
+    {
+    <li>
+        @*<a asp-action="showproductbygroup" asp-controller="Products" asp-route-id="@i.Id">@i.Name</a>*@
+        <a  href="/Group/@i.Id">@i.Name</a>
+    </li>
+    }
+</ul>
+

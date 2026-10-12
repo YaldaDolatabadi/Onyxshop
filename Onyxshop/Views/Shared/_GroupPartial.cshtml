@@ -1,0 +1,32 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Onyxshop.Data.Repositories
+@inject IGroupRepository _GroupRepository;
+@*این پارشیال ویو برای استفاده در نوبار بالای سایت است که گروه محصولات رو بصورت کرکره ای برای ما نمایش دهد*@
+<li class="nav-item dropdown">
+    @*<a class="nav-link dropdown-toggle" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">گروه ها</a>*@
+    @*<div class="dropdown-menu" aria-labelledby="dropdown09">*@
+        @*@foreach (var i in _GroupRepository.getallcategories())*@
+        @*{*@
+            @*//اینو درستش کن برای نمایش گروه ها این کار نمیکنه در اولین فرصت بیا درستش کننننن*@
+            @*<a class="dropdown-item" asp-action="showproductbygroup" asp-controller="Products" asp-route-id="@i.Id">@i.Name</a>*@
+            @*<a class="dropdown-item" href="/Group/@i.Id">@i.Name</a>*@
+        @*}*@
+    @*</div>*@
+    <a href="#" type="button" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+       گروه ها
+    </a>
+    <ul class="dropdown-menu">
+   
+         @foreach (var i in _GroupRepository.getallcategories())
+        {
+            //اینو درستش کن برای نمایش گروه ها این کار نمیکنه در اولین فرصت بیا درستش کننننن
+            @*<a class="dropdown-item" asp-action="showproductbygroup" asp-controller="Products" asp-route-id="@i.Id">@i.Name</a>*@
+            <li> <a class="dropdown-item nav-link active" href="/Group/@i.Id">@i.Name</a></li>
+        }
+    </ul>
+</li>
+
+ 

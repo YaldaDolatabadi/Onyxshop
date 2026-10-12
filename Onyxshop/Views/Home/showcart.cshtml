@@ -1,0 +1,51 @@
+﻿@model Order;
+@{
+    ViewData["Title"] = "سبد خرید";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>سبد خرید شما</h1>
+@*@if (@Model!=null)
+{    <div class="alert">  سبد خریدت خالیه</div>
+
+}
+else
+{*@
+    <div dir='rtl'>
+        <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">نام کالا</th>   
+      <th scope="col">قیمت واحد</th>
+      <th scope="col">تعداد</th>
+      <th scope="col"> قیمت مجموع</th>
+      <th scope="col"> </th>
+
+    </tr>
+  </thead>
+  <tbody>
+     
+      @foreach (var i in @Model.details)
+      {
+    <tr>
+      <th scope="row">@i</th>
+      <td>@i.product.Name</td>
+      <td>@i.price</td>
+      <td>@i.count</td>
+      <td>@(i.price*i.count)</td>
+      <td>
+   <a asp-action="removefromcart" asp-controller="home"
+    asp-route-cartitemid="@i.DetailId">حذف</a>
+  </td>
+    </tr>
+      }
+  </tbody>
+     
+</table>
+<p>@Model.details.Sum(d=>d.count*d.price):هزینه قابل پرداخت</p>
+</div>
+@*}*@
+
+

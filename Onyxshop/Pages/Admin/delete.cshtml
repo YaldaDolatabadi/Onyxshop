@@ -1,0 +1,38 @@
+﻿@page
+@model Onyxshop.Pages.Admin.deleteModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+<h1> حذف محصول </h1>
+
+
+<form method="post" >
+    <input type="hidden" asp-for="@Model.producttodelete.Id" />
+     <dl >
+                            
+                     <dd>  <label asp-for="producttodelete.Name">نام محصول</label></dd>
+                    <dt>
+                                <input asp-for="producttodelete.Name"  readonly/>
+                                <span asp-validation-for="producttodelete.Name" class="text-danger"></span>
+                            </dt>
+                            <dd><label asp-for="producttodelete.description">توضیحات</label></dd>
+                            <dt>
+                                <textarea asp-for="producttodelete.description" class="form-control" readonly></textarea>
+                               
+                            </dt>
+                                 <dd><label asp-for="producttodelete.vazn" >وزن</label></dd>
+                            <dt>
+                                <input asp-for="producttodelete.vazn" class="form-control" readonly/>
+                          
+                         
+                            </dt>
+                            <dd></dd>
+                            <dt>
+                                <br />
+                               
+                              @*  onclick="SubmitForms('Addproducttoedit'); return false;"*@
+                            </dt>
+                        </dl>
+                            <input class="btn btn-danger" type="submit" value="حذف" />
+                            </form>
+

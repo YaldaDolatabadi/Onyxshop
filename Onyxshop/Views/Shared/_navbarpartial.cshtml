@@ -1,0 +1,114 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+
+  <header>
+   <nav  class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"> 
+      <div class="container d-flex">
+          <div style="border-left: 2px solid white " class="p-2">
+        <span class="navbar-text">
+              اونیکس 
+          </span>
+          </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse =" id="navbarContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link active home" asp-area="" asp-controller="Home" asp-action="Index">خانه</a>       
+            </li>
+            <li class="nav-item">
+             <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="contact"> تماس با ما </a>
+             </li>
+
+              <li class="nav-item">
+             <partial name="_GroupPartial" />
+           </li>
+           <div class="border-1"></div>
+             
+        @if (User.Identity.IsAuthenticated)
+                        {
+                           
+                            <li class="nav-item ">
+                            <a class="nav-link active">@User.Identity.Name خوش آمدید</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link active" asp-action="logout" asp-controller="Account"> خروج</a>
+
+                        </li>
+                        }
+                        else
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-action="GotoRegister" asp-controller="Account">ثبت نام</a>
+                            </li>
+                         
+                           <li class="nav-item">   
+                            <a class="nav-link active" asp-action="login" asp-controller="Account">ورود</a>
+                        </li>
+                      
+                        }
+         
+       </ul>
+      
+          <div class="nav-divider"></div>
+          <div class="nav-socials text-secondary opacity-50">
+            <a href="#">
+              <i class="bx bxl-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="bx bxl-telegram"></i>
+            </a>
+            <a href="#">
+              <i class="bx bxl-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="bx bxl-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav> 
+   
+   <nav class="navbar navbar-expand-lg bg-light"> 
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar scroll</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Link
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Link</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav> 
+  </header>

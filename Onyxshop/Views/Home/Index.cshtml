@@ -1,0 +1,46 @@
+﻿@model IEnumerable<product>
+<link rel="stylesheet" href="~/css/mystyle.css" asp-append-version="true" />
+
+@{
+    ViewData["Title"] = "فروشگاه اینتی اونیکس "; //فکر کنم اینو میفرسته به layout
+}
+
+<div>
+    <div class="d-flex justify-content-center lalefont my-4">
+    <h1 class="display-4">اونیکس </h1>
+    </div>
+
+  @*  <div class="bg-main">
+    <h3 class="py-3"> خرید انواع زینت آلات و اکسسوری های زنانه و مردانه</h3>
+    </div>*@
+    <div class="row bg-main align-items-center">
+        <div class="col-5 justify-content-center">
+            <h5 class="title-heading d-inline-block p-2 head3">به فروشگاه اینترنتی اونیکس خوش آمدید</h5>
+            <h6 class="title-heading d-inline-block p-2 head3">خرید انواع زینت آلات و اکسسوری های زنانه و مردانه</h6>
+           @* <div class="btngalery">
+            <button class="btn btn-light "> مشاهده گالری</button>
+            </div>*@
+            
+        </div>
+</div>
+<hr />
+
+   <div class=row>
+
+        @foreach (var i in Model)
+    {
+        //for product 1
+        <div class="d-flex col-12 col-lg-4" >
+            <div class="card" >
+  <img class="card-img-top" src="/images/@(i.Id).jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">@i.Name</h5>
+    <p class="card-text">@i.description.</p>
+    @*ارسال به اکشن با پارامتر*@
+    <a asp-action="details" asp-controller="home" asp-route-id="@i.Id" class="btn btn-warning">جزئیات</a>
+  </div>
+</div>
+        </div>   
+    }
+   </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model Onyxshop.Models.loginviewmodel
+
+@{
+    ViewData["Title"] = "login";
+}
+
+<h2>ورود</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="usernameorphoneno" class="control-label"></label>
+                <input asp-for="usernameorphoneno" class="form-control" />
+                <span asp-validation-for="usernameorphoneno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="rememberme" />   @Html.DisplayNameFor(model => model.rememberme)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ورود" class="btn btn-success" />
+                <br />
+                <a href=#> رمز عبور خود را فراموش کرده ام</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,51 @@
+﻿.bott{
+    background-color:yellow
+}
+
+.bg-main {
+    background:url("../images/style/welcome.jpg")center/cover fixed no-repeat ;
+  min-height:calc(100vh - 100px);
+}
+.con{
+    height:200px;
+}
+
+.textpadding{
+    padding-right:5vw!important;
+    padding-left:500px;
+    color:#e0d5a0
+}
+.btngalery {
+    padding-right: 5.5vw !important
+}
+.align {
+    text-align: center 
+}
+@font-face {
+    font-family: lalezar;
+    src: url("../font/Lalezar-Regular.otf");
+}
+@font-face {
+    font-family: Traffic;
+    src: url("../font/trafficbold.otf");
+}
+@font-face {
+    font-family: arshia;
+    src: url("../font/arshia.otf");
+}
+.lalefont {
+    font-family: lalezar;
+}
+.head3 {
+    box-sizing: initial !important ;
+    text-align: right !important;
+        color: #444;
+}
+
+.trafficfont{
+    font-family:Traffic;
+}
+
+.contactbg {
+    background: url("../images/style/contactbg.jpg")center/cover fixed no-repeat;
+}

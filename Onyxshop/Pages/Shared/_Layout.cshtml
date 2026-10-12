@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+     <link rel="stylesheet"  href="~/lib/bootstrap/dist/css/bootstrap.min.css"  asp-append-version="true" />
+ 
+         <link rel="stylesheet" type="text/css" href="~/css/Admin.css"  asp-append-version="true" />
+<!-- jQuery library -->
+
+ <script src="~/lib/jquery/jquery.min.js" ></script>
+
+
+<!-- Latest compiled JavaScript -->
+
+ <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true" ></script>
+ <script src="~/lib/jquery-validation/dist/jquery.validate.js" asp-append-version="true" ></script>
+ <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" asp-append-version="true" ></script>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <title>@ViewBag.Title</title>
+</head>
+<body dir="rtl">
+    <header>
+        <a href="/"></a>
+    </header>
+    <div class="container">
+@*        <nav>
+            <ul>
+                <li>bbb</li>
+                <li>nnn</li>
+                <li>kkk</li>
+            </ul>
+        </nav>*@
+       <main>
+            @RenderBody()
+       </main>
+    </div>
+</body>
+</html>
